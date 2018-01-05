@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<?php
+// header("Access-Control-Allow-Origin: *");
+?>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Register</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link href="assets/css/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+    <!-- Retina Images Plugin -->
+    <!--    <script src="assets/js/plugins/retina/retina.min.js"></script>-->
+    <!-- Plugin CSS -->
+    <link href="assets/css/plugins/hover/hover.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/owl.carousel/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/plugins/owl.carousel/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/plugins/owl.carousel/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/plugins/jquery.fs.wallpaper/jquery.fs.wallpaper.css" rel="stylesheet">
+    <link href="assets/css/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+    <!-- Spectrum CSS -->
+    <link href="assets/css/spectrum2.css" rel="stylesheet">
+    <link href="assets/css/register.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+
+    <!--<script>
+        function recaptchaCallback() {
+            $('#contactSubmit').removeAttr('disabled');
+        };
+
+        
+    </script>-->
+
+    
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="wrapper">
+
+        <!--  Loading View      -->
+        <div class="se-pre-con"></div>
+
+        <!--  Ajax View      -->
+        <div id="overlay-load"></div>
+
+        <div id="wait" style="display : none; width : 69px; height : 89px; position : fixed; top : 50%; left : 50%; padding-bottom : 10px;">
+            <img src='./assets/images/loader-64x/Preloader_2.gif' width="64" height="64" /><br>Loading..
+        </div>
+
+        <div class="overlayLoading"></div>
+
+        <nav id="CICD" class="navbar-dark navbar-fixed-top top-nav-collapse" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll nav-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logo">
+                            <img class="logo-img" src="assets/img/logo.png">
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <section class="section" id="section">
+            <div class="row">
+
+                <div class="thelogo col-md-5 col-sm-5 col-lg-5">
+                    <img class="img" src="assets/img/demo-portraits/portrait-1.png" alt="" />
+                    <br/>
+                    <h2>REGISTER NOW</h2>
+                </div>
+
+                <div class="verticalLine col-md-6 col-sm-6 col-lg-6" style="display: block;">
+                    <form name="sentMessage" id="contactForm" style="padding-right: 15px;">
+                        <legend>Registration Details</legend>
+
+                        <input id='teamname' name='teamname' placeholder='Team Name' onchange="checkname()" type='text' required oninput="this.setCustomValidity('')">
+                        <!--<div class="row">
+                            <div class="col-sm-4">
+                               
+                               
+                               
+                                
+                            </div>
+                            <div class="col-sm-8">
+                                
+                               
+                                
+                                
+                            </div>
+
+                        </div>-->
+							
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-6 col-md-6"> <input id='leadermail' name='leadermail' onkeyup="checkDuplicateEmail()"  placeholder='Team Leader Email Address' type='email' required oninput="this.setCustomValidity('')"></div>
+                                <div class="col-sm-6 col-lg-6 col-md-6"><input id='teamLeadName' name='teamLeadname' placeholder='Team Leader NickName' type='text' required required oninvalid="this.setCustomValidity('')"
+                                    oninput="this.setCustomValidity('')"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6"> <input id='member2mail' name='member2mail' onkeyup="checkDuplicateEmail()"  placeholder='Team Member 2 E-mail Address' type='email' oninput="this.setCustomValidity('')"></div>
+                                <div class="col-sm-6"> <input id='member2name' name='member2name' placeholder='Member 2 NickName' type='text' oninvalid="this.setCustomValidity('')"
+                                    oninput="this.setCustomValidity('')"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6"> <input id='member3mail' name='member3mail' onkeyup="checkDuplicateEmail()"  placeholder='Team Member 3 E-mail Address' type='email' oninput="this.setCustomValidity('')"></div>
+                                <div class="col-sm-6"><input id='member3name' name='member3name' placeholder='Member 3 NickName' type='text' oninvalid="this.setCustomValidity('')"                                    oninput="this.setCustomValidity('')"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6"><input id='member4mail' name='member4mail' onkeyup="checkDuplicateEmail()"  placeholder='Team Member 4 E-mail Address' type='email' oninput="this.setCustomValidity('')"></div>
+                                <div class="col-sm-6"><input id='member4name' name='member4name' placeholder='Member 4 NickName' type='text' oninvalid="this.setCustomValidity('')"
+                                    oninput="this.setCustomValidity('')"></div>
+                            </div>
+                            <br/>
+                            <legend>License</legend>
+                            <textarea type="text" class="input-large form-control" id="welcomeDiv" style="height:400px; resize: none;  margin-top: 30px; text-align: justify;" readonly>
+
+
+                        Virtusa Commercial Tool License (V-TL)
+
+
+BY INSTALLING, SHARING OR USING THE PROGRAM, LICENSEE AGREES TO THE TERMS OF THIS AGREEMENT. ONLY PARTIES (INCLUDING THEIR EMPLOYEES AND AUTHORIZED CONTRACTORS) WHO HAVE A MASTER SERVICES AGREEMENT AND/OR WORK ORDER (A “VIRTUSA CONTRACT”) EXECUTED WITH VIRTUSA CORPORATION (OR AN AFFILIATE THEREOF) ARE PERMITTED TO USE THIS PROGRAM. IF LICENSEE DOES NOT HAVE A VIRTUSA CONTRACT, LICENSEE IS NOT PERMITTED TO USE THIS PROGRAM.  IF LICENSEE IS ACCEPTING THESE TERMS ON BEHALF OF ANOTHER PERSON OR A COMPANY OR OTHER LEGAL ENTITY, LICENSEE REPRESENTS AND WARRANTS THAT LICENSEE HAS FULL AUTHORITY TO BIND THAT PERSON, COMPANY, OR LEGAL ENTITY TO THESE TERMS. 
+
+IF LICENSEE DOES NOT AGREE TO THESE TERMS, DO NOT INSTALL, COPY, SHARE, OR USE THE PROGRAM
+
+1. 	Definitions
+
+	a.	"Virtusa" means Virtusa Corporation or one of its subsidiaries.
+
+	b.	"Program" means the Virtusa API Exchange Platform, including license use documents or keys, and application documentation provided with the product. 
+
+	c.	“Licensee” refers to an individual person or to a single legal entity (including employees or authorized contractor who is authorized to use the Program under the terms herein) who has accepted the terms of this Agreement and who has entered into a Virtusa Contract.  
+
+	d.	“End Users” shall mean those individuals who are employees or contractors of Licensee  authorized by Licensee to have access to the Products, subject to the term of this Agreement.
+
+
+2. 	Grant of License; Ownership
+
+	2.1	License Grant.  Subject to the terms and conditions of this Agreement, Virtusa hereby:
+
+		a.	Grants to the Licensee a non-exclusive, non-transferable, license, without the right to sublicense, to use one copy of the server component of the Program in a designated server and solely for its internal business purposes. 
+		b.	To the extent that there is any third party software (i.e Open Source, Proprietary and otherwise) the Licensee agrees to abide by the terms stipulated in the licenses of such third party components and products. 
+Licensee acknowledges that it receives no right to license, distribute or sublicense the Product to customers or any third parties, except as expressly authorized in writing by Virtusa.  Licensee may transfer the Product to another computer owned by Licensee, provided, however, that Licensee removes all copies of the Product from the computer from which it is transferred.
+
+	2.2 	 Ownership.  The Program is under the ownership of Virtusa Corporation. Virtusa retains all right, title and interest in the Program, including but not limited to any and all intellectual property rights in the Program and associated materials now owned or that may be owned in the future by Virtusa.  
+
+	2.3 	Restrictions.  All right, title and interest in the Product and all copies thereof shall at all times remain the property of Virtusa.  Licensee shall not and shall not permit others to: (i)&nbsp;reproduce or copy any Product except as expressly provided in this Agreement; (ii)&nbsp;remove any copyright, trademark or proprietary notice included in the Product; iii) make modifications to the application in any form to change the behavior of the product (iv)&nbsp; decompile, disassemble or reverse engineer the Product; (v) sublicense or host the Product in a commercial capacity; or (vi) transfer or license the Product to any customer, end-user or third party without the prior written consent of Virtusa.  Licensee shall not incorporate the Product in any product designed, developed, marketed, sold or licensed by Licensee without Virtusa’s consent.  
+
+	2.4.     Records.  Licensee will maintain a record of all copies of the Program and ensure that anyone who uses the Program (accessed either locally or remotely) does so only for Licensee’s authorized use and complies with the terms of the Virtusa Contract
+
+
+3. Term and Termination. 
+
+Unless terminated earlier as set forth in this Agreement, the term of this Agreement is from the effective date through the termination of the Virtusa Contract to which this license relates or as explicitly stated when the license is granted.  This Agreement may be extended only with the written consent of Virtusa.  Each party may terminate this Agreement at any time upon three (3) days written notice to the other.  This Agreement shall terminate immediately if Licensee breaches any of the terms of this Agreement. Such license shall terminate immediately upon the termination or expiration of this License or the Virtusa Contract for any reason. In the event of termination due to whatever reasons, Licensee agrees to uninstall all copies of the program in use at the time of the termination.
+
+
+4. 	Conditions and Limitations
+
+	4.1	 No Other License- This license does not grant Licensee rights to use any Virtusa’s name, logo, or trademarks or any other intellectual property right of Virtusa unless expressly authorized by Virtusa.
+
+	4.2 The program may regularly and securely send aggregate usage and license related information to Virtusa systems. No personally identifiable information will be transferred in this manner.
+
+	4.3 Where the program is used to measure the quality of the Virtusa engagement with the licensee, the program will send aggregate quality metrics to Virtusa systems for the purpose of internal reporting and quality management.
+
+
+5.	 No Warranty/Limitation of Liability
+
+Disclaimer of Warranties and Risk of Use. THE PROGRAM IS PROVIDED “AS IS” AND LICENSEE BEARS ALL RISK IN USING SUCH PROGRAM. VIRTUSA MAKES NO EXPRESS OR IMPLIED REPRESENTATIONS OR WARRANTIES WHATSOEVER REGARDING THE PRODUCT.  BY WAY OF EXAMPLE, BUT NOT OF LIMITATION, VIRTUSA DISCLAIMS ALL CONDITIONS OF QUALITY AND ALL WARRANTIES, INCLUDING TITLE, NONINFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+Limitation of Liability.  LICENSEE AGREES THAT IN NO EVENT SHALL VIRTUSA BE LIABLE UNDER ANY THEORY OF LIABILITY (INCLUDING, BUT NOT LIMITED TO, BREACH OF CONTRACT, BREACH OF WARRANTY, TORT, NEGLIGENCE, STRICT LIABILITY, OR ANY OTHER THEORY OF LIABILITY) FOR&nbsp;DIRECT DAMAGES OR INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES SUCH AS, BUT NOT LIMITED TO, EQUIPMENT DOWN-TIME, LOSS OF DATA, EXEMPLARY OR PUNITIVE DAMAGES, OR ANY OTHER SIMILAR DAMAGES.
+
+
+6) 	Confidentiality
+
+	6.1 General.  Licensee acknowledges that in the course of the Virtusa Contract Licensee has been and shall be entrusted with certain Confidential Information (as defined in the Virtusa Contract) of the other and agrees that it shall use reasonable care to protect the confidentiality thereof, using at least the same measures it would use to protect its own similar, highly confidential information and shall not, except for the sole purposes to perform the Virtusa Contract, (a) use such Confidential Information for any purpose or (b) disclose any such Confidential Information to any person (except employees or agents on a need-to-know basis where such persons have agreed to be bound in writing to obligations of confidentiality), unless such disclosure is authorized by the other party in writing.   he obligations of Licensee under this Agreement shall not apply to information which (i) was generally known in the trade or business in which it is practiced by the receiving party at the time of disclosure, or becomes so generally known after such disclosure, through no act of the receiving party and otherwise than as a result of a breach of this Section; (ii) has come into the possession of the receiving party rightfully from a third party without obligation of confidentiality; (iii) was developed by the receiving party independently of and without reference to Confidential Information;  or (iv) is disclosed pursuant to any legal, judicial or arbitration or similar legal proceeding or as required by law; provided that the receiving party disclosing such information uses all reasonable efforts to protect the information as being confidential.
+
+
+7.        Publicity Rights
+
+	7.1 Licensee grants Virtusa the right to include licensee name and/or logo in a list of customers, which may be publicly displayed on Virtusa’s website and in promotional materials for Virtusa’s products together with other customers of Virtusa.
+
+	7.2 Licensee may terminate the publicity right granted in section 7.1 above or request to be excluded from appearing in Virtusa’s public list of customers, website or promotional materials at any time by submitting a written request via email to: apibanking.virtusapolaris@gmail.com Virtusa shall comply with that termination or request within ten (10) business days from receipt of such notice.
+
+
+8. 	General
+
+	8.1 Equitable Relief.  Licensee hereby acknowledges that unauthorized disclosure or use of the Product would cause irreparable harm and significant injury to Virtusa that may be difficult to ascertain.  Licensee agrees that Virtusa will have the right to seek injunctive relief to enforce Licensee’s obligations under this Agreement in addition to any other rights and remedies Virtusa may have.
+
+	8.2 	Export Restrictions.  Licensee agrees that Licensee will not, directly or indirectly, export, re-export, or transship the Product or any technical data received under this Agreement in any form without the appropriate United States and foreign government licenses.
+
+	8.3 Miscellaneous. This Agreement may not be modified except by a writing executed by the duly authorized representatives of Virtusa and Licensee.  This Agreement and the licenses granted hereunder may not be assigned by Licensee without the prior express written consent of Virtusa.  This Agreement and the exhibit attached hereto contain the entire understanding of the parties with respect to the matters contained herein, and there are no promises, covenants or undertakings other than those expressly set forth herein.  This Agreement will be governed by Massachusetts law.
+
+
+
+
+                        </textarea>
+                        <div id="terms_con" style="clear: both; margin-top:10px;">
+                            <input id='agree' name='agree' type='checkbox' style="float: left; margin-right: 10px" required oninvalid="this.setCustomValidity('Accept Terms and Conditions')"
+                                onclick="this.setCustomValidity('')">
+
+                            <div class="termsAndConditions">I accept the terms and conditions</div>
+                        </div>
+                        <br/>
+                        <div class="g-recaptcha" data-sitekey="6Lcv7ygUAAAAADNGbsu0bfVCA83VxXteuXUOODsh" data-callback="recaptchaCallback" ></div>
+                        <div id="success" style="margin-top: 10px"></div>
+                        <input type="submit"  class="btn btn-lg btn-primary btn-square btn-raised" id="contactSubmit" value='Register'>
+                        <!-- <a class='forgot' href='#'>Already have an account?</a> --></form>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer-1" id="footer-1">
+        <div class="ftr-top-bar"></div>
+        <div class="lower">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="small" style="color: #6c7d88;">&copy;2017 - Virtusa Corporation. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <br/>
+    <!--Google captcha JavaScript File-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <!-- Core JavaScript Files -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.js"></script>
+    <!-- Plugin JavaScript Files -->
+    <script src="assets/js/plugins/jquery.easing/jquery.easing.1.3.js"></script>
+    <script src="assets/js/plugins/jquery.fitvids/jquery.fitvids.js"></script>
+    <script src="assets/js/plugins/jquery.fs.wallpaper/jquery.fs.wallpaper.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/js/plugins/scrollReveal/scrollReveal.js"></script>
+    <script src="assets/js/plugins/stellar/stellar.js"></script>
+    <script src="assets/js/plugins/SmoothScroll/SmoothScroll.js"></script>
+    <script src="assets/js/plugins/jqBootstrapValidation/jqBootstrapValidation.js"></script>
+    <script src="assets/js/plugins/isotope/isotope.pkgd.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/postCallHandeller_register.js"></script>
+    <script src="assets/js/spectrum.js"></script>
+    <script src="assets/js/register.nav.js"></script>
+</body>
+
+</html>

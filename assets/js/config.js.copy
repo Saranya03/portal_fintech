@@ -1,0 +1,4 @@
+var wikiBaseURL = "http://HOST_IP/dokuwiki/doku.php?id=";
+var imagePathBase = "assets/img/demo-portfolio/";
+var apiBaseURL = "http://HOST_IP:10010/monitor/";
+var getDocument = "http://HOST_IP:10010/document";
